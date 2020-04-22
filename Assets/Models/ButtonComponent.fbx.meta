@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: 41b715611ce8b5546a1ecc2d8259c0a9
+timeCreated: 1587576831
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BackgroundOccluder
+    100002: base
+    100004: Button
+    100006: Button_Top_Blue
+    100008: Button_Top_Green
+    100010: Button_Top_Red
+    100012: Button_Top_White
+    100014: Button_Top_Yellow
+    100016: //RootNode
+    100018: ButtonComponent
+    100020: ButtonHighlight
+    100022: ButtonInstruction
+    100024: buttonLid
+    100026: ButtonTop
+    100028: Component_Highlight
+    100030: Component_PuzzleBackground
+    100032: CrosshairCollider
+    100034: hinge
+    100036: LED_Blue
+    100038: LED_Off
+    100040: LED_Red
+    100042: LED_White
+    100044: LED_Yellow
+    100046: LightGlow
+    100048: LightGlow 1
+    100050: LightGlow 2
+    100052: LightGlow 3
+    100054: Opening_LID
+    100056: parts
+    100058: SelectableArea
+    100060: StatusLightParent
+    100062: stem
+    400000: BackgroundOccluder
+    400002: base
+    400004: Button
+    400006: Button_Top_Blue
+    400008: Button_Top_Green
+    400010: Button_Top_Red
+    400012: Button_Top_White
+    400014: Button_Top_Yellow
+    400016: //RootNode
+    400018: ButtonComponent
+    400020: ButtonHighlight
+    400022: ButtonInstruction
+    400024: buttonLid
+    400026: ButtonTop
+    400028: Component_Highlight
+    400030: Component_PuzzleBackground
+    400032: CrosshairCollider
+    400034: hinge
+    400036: LED_Blue
+    400038: LED_Off
+    400040: LED_Red
+    400042: LED_White
+    400044: LED_Yellow
+    400046: LightGlow
+    400048: LightGlow 1
+    400050: LightGlow 2
+    400052: LightGlow 3
+    400054: Opening_LID
+    400056: parts
+    400058: SelectableArea
+    400060: StatusLightParent
+    400062: stem
+    2100000: Gameplay-KT-Mobile-Diffuse 0
+    2100002: Gameplay-KT-Mobile-Diffuse 1
+    2100004: Gameplay-Legacy Shaders-Transparent-Diffuse 0
+    2100006: Component_Button_LED_RED
+    2100008: LightGlow
+    2100010: Component_Button_LED_WHITE
+    2100012: Component_Button_LED_BLUE
+    2100014: Component_Button_LED_YELLOW
+    2300000: base
+    2300002: Button_Top_Blue
+    2300004: Button_Top_Green
+    2300006: Button_Top_Red
+    2300008: Button_Top_White
+    2300010: Button_Top_Yellow
+    2300012: buttonLid
+    2300014: Component_PuzzleBackground
+    2300016: hinge
+    2300018: LED_Blue
+    2300020: LED_Off
+    2300022: LED_Red
+    2300024: LED_White
+    2300026: LED_Yellow
+    2300028: LightGlow
+    2300030: LightGlow 1
+    2300032: LightGlow 2
+    2300034: LightGlow 3
+    2300036: stem
+    3300000: base
+    3300002: Button_Top_Blue
+    3300004: Button_Top_Green
+    3300006: Button_Top_Red
+    3300008: Button_Top_White
+    3300010: Button_Top_Yellow
+    3300012: buttonLid
+    3300014: Component_PuzzleBackground
+    3300016: hinge
+    3300018: LED_Blue
+    3300020: LED_Off
+    3300022: LED_Red
+    3300024: LED_White
+    3300026: LED_Yellow
+    3300028: LightGlow
+    3300030: LightGlow 1
+    3300032: LightGlow 2
+    3300034: LightGlow 3
+    3300036: stem
+    4300000: Component_PuzzleBackground
+    4300002: Button_Top_Red
+    4300004: stem
+    4300006: Button_Top_Blue
+    4300008: Button_Top_Green
+    4300010: Button_Top_White
+    4300012: Button_Top_Yellow
+    4300014: buttonLid
+    4300016: hinge
+    4300018: base
+    4300020: LED_Off
+    4300022: LED_Red
+    4300024: LightGlow
+    4300026: LED_White
+    4300028: LightGlow
+    4300030: LED_Blue
+    4300032: LightGlow
+    4300034: LED_Yellow
+    4300036: LightGlow
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Component_Button_LED_BLUE
+    second: {fileID: 2100000, guid: 91a0c5e8a4806c4498eb97fb4e13be6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Component_Button_LED_RED
+    second: {fileID: 2100000, guid: f418ee3bc84e98549958cdd85b082c39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Component_Button_LED_WHITE
+    second: {fileID: 2100000, guid: 1eda3691924b4354c9d13a9d9fe4d98b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Component_Button_LED_YELLOW
+    second: {fileID: 2100000, guid: 9f60266b1b3347a42bb3444d4881445f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gameplay-KT-Mobile-Diffuse 0
+    second: {fileID: 2100000, guid: 619c0f3f0f098d543a5d51cfa407bf0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gameplay-KT-Mobile-Diffuse 1
+    second: {fileID: 2100000, guid: ba4e389a65fb6b24ebfe9e0ee4085509, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gameplay-Legacy Shaders-Transparent-Diffuse 0
+    second: {fileID: 2100000, guid: 7f4fe46ee708c06488f0732b42a9760a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightGlow
+    second: {fileID: 2100000, guid: 358a8b0ceb010064ab47001915bd1a8f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

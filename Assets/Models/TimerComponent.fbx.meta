@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 6c41139cab555ee4f89ba8a162392e41
+timeCreated: 1587589393
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Component_Timer
+    100002: Component_TimerNoStrikes
+    100004: LightGlow
+    100006: Strike0_Active
+    100008: Strike0_Inactive
+    100010: Strike1_Active
+    100012: Strike1_Inactive
+    100014: TimerComponent
+    100016: //RootNode
+    100018: TimerText
+    100020: TimerTextBack
+    100022: TimerTextBack 1
+    400000: Component_Timer
+    400002: Component_TimerNoStrikes
+    400004: LightGlow
+    400006: Strike0_Active
+    400008: Strike0_Inactive
+    400010: Strike1_Active
+    400012: Strike1_Inactive
+    400014: //RootNode
+    400016: TimerComponent
+    400018: TimerText
+    400020: TimerTextBack
+    400022: TimerTextBack 1
+    2100000: Gameplay-KT-Transparent-Mobile Diffuse Underlay200 0
+    2100002: Gameplay-KT-Unlit-TransparentVertexColorUnderlay30 0
+    2100004: LightGlow
+    2100006: Gameplay-KT-Mobile-Diffuse 0
+    2300000: Component_Timer
+    2300002: Component_TimerNoStrikes
+    2300004: LightGlow
+    2300006: Strike0_Active
+    2300008: Strike0_Inactive
+    2300010: Strike1_Active
+    2300012: Strike1_Inactive
+    3300000: Component_Timer
+    3300002: Component_TimerNoStrikes
+    3300004: LightGlow
+    3300006: Strike0_Active
+    3300008: Strike0_Inactive
+    3300010: Strike1_Active
+    3300012: Strike1_Inactive
+    4300000: Strike1_Inactive
+    4300002: Strike0_Inactive
+    4300004: Strike0_Active
+    4300006: Strike1_Active
+    4300008: LightGlow
+    4300010: Component_TimerNoStrikes
+    4300012: Component_Timer
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gameplay-KT-Mobile-Diffuse 0
+    second: {fileID: 2100000, guid: 619c0f3f0f098d543a5d51cfa407bf0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gameplay-KT-Transparent-Mobile Diffuse Underlay200 0
+    second: {fileID: 2100000, guid: 7f4fe46ee708c06488f0732b42a9760a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gameplay-KT-Unlit-TransparentVertexColorUnderlay30 0
+    second: {fileID: 2100002, guid: 6c41139cab555ee4f89ba8a162392e41, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
