@@ -160,7 +160,9 @@ public class PressureModule : MonoBehaviour
             PressureMeterText.text = "";
             for (int i = 0; i < Random.Range(0, 5); i++)
             {
-                PressureMeterText.text += GlitchGlyphs[Random.Range(0, GlitchGlyphs.Length)];
+                string glyph = GlitchGlyphs[Random.Range(0, GlitchGlyphs.Length)].ToString();
+                if (Random.Range(0, 1) == 1) glyph = glyph.ToUpper();
+                PressureMeterText.text += glyph;
             }
         }
         else
