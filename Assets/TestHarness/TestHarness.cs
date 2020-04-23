@@ -1232,7 +1232,7 @@ public class TestHarness : MonoBehaviour
     {
         mouseDownTIme += Time.deltaTime;
         //Camera/bomb control
-        // Get the left mouse button
+        // Get the left mouse Button
         if (Input.GetMouseButtonDown(1))
         {
             // Get mouse origin
@@ -1240,7 +1240,7 @@ public class TestHarness : MonoBehaviour
             isRotating = true;
         }
 
-        // Get the right mouse button
+        // Get the right mouse Button
         if (Input.GetMouseButtonDown(2))
         {
             // Get mouse origin
@@ -1248,7 +1248,7 @@ public class TestHarness : MonoBehaviour
             isPanning = true;
         }
 
-        // Disable movements on button release
+        // Disable movements on Button release
         if (!Input.GetMouseButton(1)) isRotating = false;
         if (!Input.GetMouseButton(2)) isPanning = false;
 

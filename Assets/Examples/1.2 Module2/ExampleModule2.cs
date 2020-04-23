@@ -91,10 +91,10 @@ public class ExampleModule2 : MonoBehaviour
         return true;
     }
 
-    //On pressing button a looped sound will play
+    //On pressing Button a looped sound will play
     void OnPress(bool correctButton)
     {
-        Debug.Log("Pressed " + correctButton + " button");
+        Debug.Log("Pressed " + correctButton + " Button");
 
         if (correctButton)
         {
@@ -107,7 +107,7 @@ public class ExampleModule2 : MonoBehaviour
         }
     }
 
-    //On releasing a button a looped sound will stop
+    //On releasing a Button a looped sound will stop
     void OnRelease()
     {
         Debug.Log("OnInteractEnded Released");

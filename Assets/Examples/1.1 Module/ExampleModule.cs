@@ -41,12 +41,12 @@ public class ExampleModule : MonoBehaviour
 
         if (!isActivated)
         {
-            Debug.Log("Pressed button before module has been activated!");
+            Debug.Log("Pressed Button before module has been activated!");
             GetComponent<KMBombModule>().HandleStrike();
         }
         else
         {
-            Debug.Log("Pressed " + correctButton + " button");
+            Debug.Log("Pressed " + correctButton + " Button");
             if (correctButton)
             {
                 GetComponent<KMBombModule>().HandlePass();

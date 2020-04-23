@@ -170,7 +170,7 @@ public class KMMissionEditor : Editor
             }
         }
 
-        if (isOnlyComponentPool) { GUI.enabled = false; } //Disable the delete button if this is only pool
+        if (isOnlyComponentPool) { GUI.enabled = false; } //Disable the delete Button if this is only pool
         if (GUILayout.Button("Delete", EditorStyles.miniButtonRight, GUILayout.Width(60)))
         {
             RemoveComponentPool(poolIndex);

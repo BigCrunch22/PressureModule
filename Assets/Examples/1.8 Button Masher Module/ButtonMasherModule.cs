@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 /// <summary>
-/// A simple module that requires the player to push the exactly button 50 times, but only
+/// A simple module that requires the player to push the exactly Button 50 times, but only
 /// when the timer has a "4" in any position.
 /// </summary>
 public class ButtonMasherModule : MonoBehaviour
@@ -94,7 +94,7 @@ public class ButtonMasherModule : MonoBehaviour
 	}
 
 #pragma warning disable 0414
-	private string TwitchHelpMessage = "Solve the module with !{0} mash 4 50.  The first number is the time that has to appear in the time, the second number is the number of times to mash the button";
+	private string TwitchHelpMessage = "Solve the module with !{0} mash 4 50.  The first number is the time that has to appear in the time, the second number is the number of times to mash the Button";
 
 #pragma warning disable 0649
 	private bool TwitchShouldCancelCommand;

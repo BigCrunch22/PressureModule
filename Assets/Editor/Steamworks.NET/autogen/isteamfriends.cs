@@ -238,7 +238,7 @@ namespace Steamworks {
 		}
 
 		/// <summary>
-		/// <para> User is in a game pressing the talk button (will suppress the microphone for all voice comms from the Steam friends UI)</para>
+		/// <para> User is in a game pressing the talk Button (will suppress the microphone for all voice comms from the Steam friends UI)</para>
 		/// </summary>
 		public static void SetInGameVoiceSpeaking(CSteamID steamIDUser, bool bSpeaking) {
 			InteropHelp.TestIfAvailableClient();

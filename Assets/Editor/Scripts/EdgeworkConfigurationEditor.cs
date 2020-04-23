@@ -107,7 +107,7 @@ namespace EdgeworkConfigurator
             GUILayout.Label("Widget Type:");
             WidgetType widgetType = DrawWidgetTypePicker(index);
 
-            //Delete button
+            //Delete Button
             if (GUILayout.Button("Delete", EditorStyles.miniButton, GUILayout.Width(60)))
             {
                 RemoveWidget(index);
