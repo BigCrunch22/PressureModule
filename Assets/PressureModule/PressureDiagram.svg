@@ -58,20 +58,20 @@
      id="layer1"
      transform="translate(-42.25,-72.988091)">
     <rect
-       style="fill:none;stroke:#000000;stroke-width:0.5"
+       style="fill:none;stroke:#000000;stroke-width:1"
        id="rect3729"
        width="125"
        height="125"
        x="42.5"
        y="73.238091" />
     <circle
-       style="fill:none;stroke:#000000;stroke-width:0.5"
+       style="fill:none;stroke:#000000;stroke-width:1"
        id="path4536"
        cx="105"
        cy="147.19543"
        r="40" />
     <rect
-       style="fill:none;stroke:#000000;stroke-width:0.43084109"
+       style="fill:none;stroke:#000000;stroke-width:1"
        id="rect4538"
        width="49.611649"
        height="21.381561"
@@ -90,7 +90,7 @@
          y="96.56263"
          style="stroke-width:0.18575716">[PRESSURE]</tspan></text>
     <circle
-       style="fill:none;stroke:#000000;stroke-width:0.5"
+       style="fill:none;stroke:#000000;stroke-width:1"
        id="path4544"
        cx="155.51395"
        cy="84.889854"
