@@ -929,6 +929,7 @@ MonoBehaviour:
   MeterGlitchRange: {x: 5, y: 10}
   GlitchGlyphs: abcdefghijklmnopqrstuvwxyz0123456789-=!@#$%^&*()_+[]\{}|;':",.<>/?
   CurrentPressure: 0
+  PressureDepletionDivider: 3
   PressureToDeplete: 0.2
   MeterGlitching: 0
 --- !u!114 &114757211279833654

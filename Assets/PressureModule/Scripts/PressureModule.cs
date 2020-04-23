@@ -52,7 +52,14 @@ public class PressureModule : MonoBehaviour
             Debug.LogFormat(@"[Pressure #{0}] Catastrophic problem: Pressure Service is not present.");
         }
 
-        PressureToDeplete = (1 / Bomb.GetSolvableModuleIDs().Count + 1) / PressureDepletionDivider;
+        if (Bomb.GetSolvableModuleIDs().Count <= 2)
+        {
+            PressureToDeplete = 2;
+        }
+        else
+        {
+            PressureToDeplete = (1 / Bomb.GetSolvableModuleIDs().Count + 1) / PressureDepletionDivider;
+        }
 
         Module.OnActivate += OnActivation;
         Module.OnPass += OnPassed;
@@ -95,29 +102,55 @@ public class PressureModule : MonoBehaviour
 
         if (buttonSinglePressTimer < ButtonDetectSinglePressTime)
         {
-            List<string> theModules = Bomb.GetSolvableModuleNames()
-                .FindAll(module => module.StartsWith("The "));
-            bool theModulePassed = theModules
-                .All(module => Bomb.GetSolvedModuleNames().Contains(module));
-            List<string> singleAuthorModules = Bomb.GetSolvableModuleIDs()
-                .FindAll(module => Service.GetAuthors(module).Length == 1);
-            bool singleAuthorsPassed = singleAuthorModules
-                .All(module => Bomb.GetSolvedModuleIDs().Contains(module));
-            List<string> beforeModules = Bomb.GetSolvableModuleIDs()
-                .FindAll(module => Service.GetReleaseDate(module)
-                               .CompareTo(DateToCompare) < 0);
-            bool beforeModulePassed = beforeModules
-                .All(module => Bomb.GetSolvedModuleIDs().Contains(module));
-
-            if (theModulePassed && singleAuthorsPassed && beforeModulePassed)
-            {
-                Module.HandlePass();
-            }
-            else
-            {
-                Module.HandleStrike();
-            }
+            ButtonSinglePressed();
         }
+    }
+
+    private void ButtonSinglePressed()
+    {
+        // If the module starts with The 
+        List<string> theModules = Bomb.GetSolvableModuleNames()
+            .FindAll(module => module.StartsWith("The "));
+        theModules = RemoveSelfFromList(theModules, false);
+        foreach (string module in Bomb.GetSolvedModuleNames())
+        {
+            theModules.Remove(module);
+        }
+
+        bool theModulePassed = theModules.Count <= 0;
+
+        // If the module has 1 Author
+        List<string> singleAuthorModules = Bomb.GetSolvableModuleIDs()
+            .FindAll(module => Service.GetAuthors(module).Length == 1);
+        singleAuthorModules = RemoveSelfFromList(singleAuthorModules);
+        // If the module was made before 2018
+        List<string> beforeModules = Bomb.GetSolvableModuleIDs()
+            .FindAll(module => Service.GetReleaseDate(module)
+                .CompareTo(DateToCompare) < 0);
+        beforeModules = RemoveSelfFromList(beforeModules);
+        foreach (string module in Bomb.GetSolvedModuleIDs())
+        {
+            singleAuthorModules.Remove(module);
+            beforeModules.Remove(module);
+        }
+
+        bool singleAuthorsPassed = singleAuthorModules.Count <= 0;
+        bool beforeModulePassed = beforeModules.Count <= 0;
+
+        if (theModulePassed && singleAuthorsPassed && beforeModulePassed)
+        {
+            Module.HandlePass();
+        }
+        else
+        {
+            Module.HandleStrike();
+        }
+    }
+
+    private List<string> RemoveSelfFromList(List<string> list, bool id = true)
+    {
+        list.RemoveAll(module => module == (id ? Module.ModuleType : Module.ModuleDisplayName));
+        return list;
     }
 
     private void UpdatePressureMeter()
