@@ -14,7 +14,16 @@ MonoBehaviour:
   id: Pressure
   title: Pressure
   author: ElijahZAwesome
-  description: The pressures building... But can you keep calm?
+  description: 'The pressure''s building... But can you keep calm?
+
+
+    Hold the button to stop the pressure from building. If it builds up, you''re toast.
+
+
+    Ensure that the Pressure Service is active or this won''t work.
+
+
+    PS: I''m sorry this looks unoriginal as heck'
   version: 1.0
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 4f43f29d247bf0a4798eec6f287f68a3, type: 3}

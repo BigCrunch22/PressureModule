@@ -50,6 +50,7 @@ public class PressureModule : MonoBehaviour
         if (Service == null)
         {
             Debug.LogFormat(@"[Pressure #{0}] Catastrophic problem: Pressure Service is not present.");
+            Module.HandlePass();
         }
 
         if (Bomb.GetSolvableModuleIDs().Count <= 2)
@@ -89,7 +90,8 @@ public class PressureModule : MonoBehaviour
         Button.GetComponent<KMSelectable>().AddInteractionPunch();
         buttonPressed = true;
         buttonSinglePressTimer = 0;
-        Button.gameObject.transform.Translate(ButtonPushedOffset);
+        Button.gameObject.transform.Translate(
+            Vector3.Scale(ButtonPushedOffset, transform.parent.parent.localScale));
         return false;
     }
 

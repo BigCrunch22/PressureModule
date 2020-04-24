@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="46.533447"
+     inkscape:cx="42.492837"
      inkscape:cy="237.3856"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -79,16 +79,16 @@
        y="81.313484" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.43028641px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18575716"
-       x="78.655334"
-       y="96.56263"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.89622974px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.32240924"
+       x="82.82756"
+       y="95.799057"
        id="text4542"
-       transform="scale(1.0303448,0.97054888)"><tspan
+       transform="scale(1.0050703,0.99495531)"><tspan
          sodipodi:role="line"
          id="tspan4540"
-         x="78.655334"
-         y="96.56263"
-         style="stroke-width:0.18575716">[PRESSURE]</tspan></text>
+         x="82.82756"
+         y="95.799057"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.89622974px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.32240924">[XX%]</tspan></text>
     <circle
        style="fill:none;stroke:#000000;stroke-width:1"
        id="path4544"
