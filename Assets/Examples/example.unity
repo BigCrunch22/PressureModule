@@ -157,6 +157,23 @@ Prefab:
       propertyPath: Service
       value: 
       objectReference: {fileID: 1686554436}
+    - target: {fileID: 102208736026190302, guid: 2dfe91ba277ffbc40a5b48bccb311f75,
+        type: 2}
+      propertyPath: m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544810555982522, guid: 2dfe91ba277ffbc40a5b48bccb311f75, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.001844148
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544810555982522, guid: 2dfe91ba277ffbc40a5b48bccb311f75, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.0028537821
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544810555982522, guid: 2dfe91ba277ffbc40a5b48bccb311f75, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.0018441466
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2dfe91ba277ffbc40a5b48bccb311f75, type: 2}
   m_IsPrefabParent: 0
@@ -262,6 +279,11 @@ Prefab:
         type: 2}
       propertyPath: FrontFaceOnly
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114848120511536268, guid: 8814ea52310d2614a9feda02ec355ae4,
+        type: 2}
+      propertyPath: TimeLimit
+      value: 6000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8814ea52310d2614a9feda02ec355ae4, type: 2}

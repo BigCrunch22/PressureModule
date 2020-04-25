@@ -31,6 +31,7 @@ public class PressureModule : MonoBehaviour
     public bool MeterGlitching = false;
 
     private bool isActivated = false;
+    private bool ZenModeActive;
     private bool buttonPressed = false;
     private float buttonSinglePressTimer = 0;
     private Vector3 buttonOriginalPos;
@@ -53,22 +54,33 @@ public class PressureModule : MonoBehaviour
             Module.HandlePass();
         }
 
-        if (Bomb.GetSolvableModuleIDs().Count <= 2)
-        {
-            PressureToDeplete = 2;
-        }
-        else
-        {
-            PressureToDeplete = (1 / Bomb.GetSolvableModuleIDs().Count + 1) / PressureDepletionDivider;
-        }
+        PressureToDeplete = CalculatePressureToDeplete();
 
         Module.OnActivate += OnActivation;
         Module.OnPass += OnPassed;
     }
 
+    /// <summary>
+    /// Calculates the dynamic amount to add to the pressure per second
+    /// </summary>
+    /// <returns>How much pressure to add per second</returns>
+    private float CalculatePressureToDeplete()
+    {
+        // For this calculation, we set it to fill up and explode at 1/3 of the bomb's total time
+        float bombTime = Bomb.GetTime();
+        float pressure = 100 / (bombTime / 3);
+        return pressure;
+    }
+
     private void OnActivation()
     {
         isActivated = true;
+
+        if(ZenModeActive)
+        {
+            PressureToDeplete = 0;
+            PressureMeterText.text = "Zen";
+        }
 
         Button.OnInteract += ButtonPress;
         Button.OnInteractEnded += ButtonRelease;
@@ -201,6 +213,7 @@ public class PressureModule : MonoBehaviour
         {
             meterToGlitchTimer += Time.deltaTime;
         }
+        if (ZenModeActive) return;
 
         if (!buttonPressed)
         {
