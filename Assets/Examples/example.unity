@@ -113,7 +113,13 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &31893206
+--- !u!114 &35032863 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114735179380037144, guid: 2dfe91ba277ffbc40a5b48bccb311f75,
+    type: 2}
+  m_PrefabInternal: {fileID: 418943037}
+  m_Script: {fileID: 11500000, guid: 96a2fc4ae3e690a498a0d85a2b5e0b99, type: 3}
+--- !u!1001 &418943037
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -157,23 +163,11 @@ Prefab:
       propertyPath: Service
       value: 
       objectReference: {fileID: 1686554436}
-    - target: {fileID: 102208736026190302, guid: 2dfe91ba277ffbc40a5b48bccb311f75,
+    - target: {fileID: 114584433243762852, guid: 2dfe91ba277ffbc40a5b48bccb311f75,
         type: 2}
-      propertyPath: m_FontSize
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544810555982522, guid: 2dfe91ba277ffbc40a5b48bccb311f75, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.001844148
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544810555982522, guid: 2dfe91ba277ffbc40a5b48bccb311f75, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.0028537821
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544810555982522, guid: 2dfe91ba277ffbc40a5b48bccb311f75, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.0018441466
-      objectReference: {fileID: 0}
+      propertyPath: BossManager
+      value: 
+      objectReference: {fileID: 35032863}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2dfe91ba277ffbc40a5b48bccb311f75, type: 2}
   m_IsPrefabParent: 0
@@ -232,6 +226,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114848120511536268, guid: 8814ea52310d2614a9feda02ec355ae4,
+        type: 2}
+      propertyPath: AudioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 439642, guid: 8814ea52310d2614a9feda02ec355ae4, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -283,8 +282,13 @@ Prefab:
     - target: {fileID: 114848120511536268, guid: 8814ea52310d2614a9feda02ec355ae4,
         type: 2}
       propertyPath: TimeLimit
-      value: 6000
+      value: 3000
       objectReference: {fileID: 0}
+    - target: {fileID: 114848120511536268, guid: 8814ea52310d2614a9feda02ec355ae4,
+        type: 2}
+      propertyPath: AudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 59a3377887ba2ce44b72ae8042b7ca31, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8814ea52310d2614a9feda02ec355ae4, type: 2}
   m_IsPrefabParent: 0

@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 114173473661845632}
   - component: {fileID: 114489430341312888}
   - component: {fileID: 114994781701616346}
+  - component: {fileID: 114735179380037144}
   - component: {fileID: 114584433243762852}
   m_Layer: 0
   m_Name: PressureModule
@@ -782,7 +783,7 @@ TextMesh:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072395367434684}
   m_Text: 99%
-  m_OffsetZ: 0
+  m_OffsetZ: -0.15
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
@@ -917,6 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Audio: {fileID: 114489430341312888}
+  BossManager: {fileID: 0}
   Module: {fileID: 114173473661845632}
   Bomb: {fileID: 114994781701616346}
   Service: {fileID: 0}
@@ -931,6 +933,17 @@ MonoBehaviour:
   PressureDepletionDivider: 3
   PressureToDeplete: 0.2
   MeterGlitching: 0
+--- !u!114 &114735179380037144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098029594435694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a2fc4ae3e690a498a0d85a2b5e0b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114757211279833654
 MonoBehaviour:
   m_ObjectHideFlags: 1

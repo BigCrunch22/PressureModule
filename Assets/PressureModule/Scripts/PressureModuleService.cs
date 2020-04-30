@@ -44,18 +44,18 @@ public class PressureModuleService : MonoBehaviour
         StartCoroutine(GetData());
     }
 
-    public string[] GetAuthors(string moduleId)
+    public string[] GetAuthors(string moduleName)
     {
         string[] setting;
-        _settings.RememberedAuthors.TryGetValue(moduleId, out setting);
+        _settings.RememberedAuthors.TryGetValue(moduleName, out setting);
         return setting ?? new string[0];
     }
 
-    public DateTime GetReleaseDate(string moduleId)
+    public DateTime GetReleaseDate(string moduleName)
     {
-        if (!_settings.RememberedReleaseDates.ContainsKey(moduleId)) return DateTime.Now;
+        if (!_settings.RememberedReleaseDates.ContainsKey(moduleName)) return DateTime.Now;
         DateTime setting;
-        _settings.RememberedReleaseDates.TryGetValue(moduleId, out setting);
+        _settings.RememberedReleaseDates.TryGetValue(moduleName, out setting);
         return setting;
     }
 
@@ -90,7 +90,7 @@ public class PressureModuleService : MonoBehaviour
 
             foreach (JObject module in allModules)
             {
-                var id = module["ModuleID"] as JValue;
+                var id = module["Name"] as JValue;
                 if (id == null || !(id.Value is string))
                     continue;
                 var author = module["Author"] as JValue;

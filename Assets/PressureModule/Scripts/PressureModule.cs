@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 public class PressureModule : MonoBehaviour
 {
     public KMAudio Audio;
+    public KMBossModule BossManager;
     public KMBombModule Module;
     public KMBombInfo Bomb;
     public PressureModuleService Service;
@@ -30,6 +31,9 @@ public class PressureModule : MonoBehaviour
     public float PressureToDeplete;
     public bool MeterGlitching = false;
 
+    private static bool bossModule = true;
+    private bool thisIsBossModule;
+
     private bool isActivated = false;
     private bool ZenModeActive;
     private bool buttonPressed = false;
@@ -41,8 +45,12 @@ public class PressureModule : MonoBehaviour
     private float meterGlitchingTimer = 0;
     private float meterToGlitchTimer = 0;
 
+    private KMAudio.KMAudioRef leakSfxRef;
+
     void Start()
     {
+        thisIsBossModule = bossModule;
+        if (bossModule) bossModule = false;
         PressureMeterText.text = "0%";
 
         buttonOriginalPos = ButtonTop.transform.localPosition;
@@ -81,6 +89,11 @@ public class PressureModule : MonoBehaviour
             PressureToDeplete = 0;
             PressureMeterText.text = "Zen";
         }
+        if (!thisIsBossModule)
+        {
+            PressureToDeplete = 0;
+            PressureMeterText.text = "Dupe";
+        }
 
         Button.OnInteract += ButtonPress;
         Button.OnInteractEnded += ButtonRelease;
@@ -93,6 +106,7 @@ public class PressureModule : MonoBehaviour
     {
         isActivated = false;
         PressureMeterText.text = ":D";
+        bossModule = false;
         return false;
     }
 
@@ -122,34 +136,29 @@ public class PressureModule : MonoBehaviour
 
     private void ButtonSinglePressed()
     {
-        // If the module starts with The 
+        // If the module contains the word The 
         List<string> theModules = Bomb.GetSolvableModuleNames()
-            .FindAll(module => module.StartsWith("The "));
-        theModules = RemoveSelfFromList(theModules, false);
+            .FindAll(module => module.ToLower().Contains(" the ") 
+                               || module.ToLower().StartsWith("the "));
+        // If the module starts with a vowel
+        List<string> vowelModules = Bomb.GetSolvableModuleNames()
+            .FindAll(module => "aeiou".IndexOf(module.ToLower()[0]) >= 0);
+        // If the module contains "P" or "R"
+        List<string> prContainsModules = Bomb.GetSolvableModuleNames()
+            .FindAll(module => module.ContainsIgnoreCase("p") || module.ContainsIgnoreCase("r"));
+        theModules = RemoveIgnoredModules(theModules);
+        vowelModules = RemoveIgnoredModules(vowelModules);
+        prContainsModules = RemoveIgnoredModules(prContainsModules);
         foreach (string module in Bomb.GetSolvedModuleNames())
         {
             theModules.Remove(module);
+            vowelModules.Remove(module);
+            prContainsModules.Remove(module);
         }
 
         bool theModulePassed = theModules.Count <= 0;
-
-        // If the module has 1 Author
-        List<string> singleAuthorModules = Bomb.GetSolvableModuleIDs()
-            .FindAll(module => Service.GetAuthors(module).Length == 1);
-        singleAuthorModules = RemoveSelfFromList(singleAuthorModules);
-        // If the module was made before 2018
-        List<string> beforeModules = Bomb.GetSolvableModuleIDs()
-            .FindAll(module => Service.GetReleaseDate(module)
-                .CompareTo(DateToCompare) < 0);
-        beforeModules = RemoveSelfFromList(beforeModules);
-        foreach (string module in Bomb.GetSolvedModuleIDs())
-        {
-            singleAuthorModules.Remove(module);
-            beforeModules.Remove(module);
-        }
-
-        bool singleAuthorsPassed = singleAuthorModules.Count <= 0;
-        bool beforeModulePassed = beforeModules.Count <= 0;
+        bool singleAuthorsPassed = vowelModules.Count <= 0;
+        bool beforeModulePassed = prContainsModules.Count <= 0;
 
         if (theModulePassed && singleAuthorsPassed && beforeModulePassed)
         {
@@ -161,9 +170,11 @@ public class PressureModule : MonoBehaviour
         }
     }
 
-    private List<string> RemoveSelfFromList(List<string> list, bool id = true)
+    private List<string> RemoveIgnoredModules(List<string> list)
     {
-        list.RemoveAll(module => module == (id ? Module.ModuleType : Module.ModuleDisplayName));
+        string[] ignored = BossManager.GetIgnoredModules(Module, DefaultIgnoreList);
+
+        list.RemoveAll(module => ignored.Contains(module));
         return list;
     }
 
@@ -214,9 +225,13 @@ public class PressureModule : MonoBehaviour
             meterToGlitchTimer += Time.deltaTime;
         }
         if (ZenModeActive) return;
+        if (!thisIsBossModule) return;
 
         if (!buttonPressed)
         {
+            leakSfxRef = Audio.PlaySoundAtTransformWithRef("steam", transform);
+            leakSfxRef.StopSound();
+            Debug.Log((leakSfxRef));
             CurrentPressure += PressureToDeplete * Time.deltaTime;
         }
         if (CurrentPressure >= 100)
@@ -226,4 +241,38 @@ public class PressureModule : MonoBehaviour
 
         UpdatePressureMeter();
     }
+
+    private string[] DefaultIgnoreList = new[]
+    {
+        "Pressure",
+        "14",
+        "Bamboozling Time Keeper",
+        "Brainf---",
+        "Forget Enigma",
+        "Forget Everything",
+        "Forget It Not",
+        "Forget Me Later",
+        "Forget Me Not",
+        "Forget Perspective",
+        "Forget The Colors",
+        "Forget Them All",
+        "Forget This",
+        "Forget Us Not",
+        "Iconic",
+        "Organization",
+        "Purgatory",
+        "RPS Judging",
+        "Simon Forgets",
+        "Simon's Stages",
+        "Souvenir",
+        "Tallordered Keys",
+        "The Time Keeper",
+        "The Troll",
+        "The Twin",
+        "The Very Annoying Button",
+        "Timing is Everything",
+        "Turn The Key",
+        "Ultimate Custom Night",
+        "Übermodule"
+    };
 }
