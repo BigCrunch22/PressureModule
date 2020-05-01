@@ -16,6 +16,8 @@ public class PressureModule : MonoBehaviour
 
     public KMSelectable Button;
     public GameObject ButtonTop;
+    public AudioClip steamAudioClip;
+    public AudioClip warningAudioClip;
     public TextMesh PressureMeterText;
     public DateTime DateToCompare = new DateTime(2018, 1, 1);
     public Vector3 ButtonPushedOffset = new Vector3(0, -0.02f, 0);
@@ -36,6 +38,7 @@ public class PressureModule : MonoBehaviour
 
     private bool isActivated = false;
     private bool ZenModeActive;
+    private bool steamPlaying = false;
     private bool buttonPressed = false;
     private float buttonSinglePressTimer = 0;
     private Vector3 buttonOriginalPos;
@@ -46,7 +49,12 @@ public class PressureModule : MonoBehaviour
     private float meterToGlitchTimer = 0;
 
     private KMAudio.KMAudioRef leakSfxRef;
+    private float leakSfxTimeToReplay;
 
+    void Awake()
+    {
+        bossModule = true;
+    }
     void Start()
     {
         thisIsBossModule = bossModule;
@@ -54,6 +62,7 @@ public class PressureModule : MonoBehaviour
         PressureMeterText.text = "0%";
 
         buttonOriginalPos = ButtonTop.transform.localPosition;
+        /*
         // Find the Pressure Service and obtain the list of module authors/release dates
         Service = FindObjectOfType<PressureModuleService>();
         if (Service == null)
@@ -61,7 +70,7 @@ public class PressureModule : MonoBehaviour
             Debug.LogFormat(@"[Pressure #{0}] Catastrophic problem: Pressure Service is not present.");
             Module.HandlePass();
         }
-
+        */
         PressureToDeplete = CalculatePressureToDeplete();
 
         Module.OnActivate += OnActivation;
@@ -83,6 +92,8 @@ public class PressureModule : MonoBehaviour
     private void OnActivation()
     {
         isActivated = true;
+
+        gameObject.AddComponent<KMAudio>().PlaySoundAtTransform(warningAudioClip.name, transform.parent);
 
         if(ZenModeActive)
         {
@@ -112,6 +123,8 @@ public class PressureModule : MonoBehaviour
 
     private bool ButtonPress()
     {
+        leakSfxRef.StopSound();
+        steamPlaying = false;
         Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, transform);
         Button.GetComponent<KMSelectable>().AddInteractionPunch();
         buttonPressed = true;
@@ -229,9 +242,19 @@ public class PressureModule : MonoBehaviour
 
         if (!buttonPressed)
         {
-            leakSfxRef = Audio.PlaySoundAtTransformWithRef("steam", transform);
-            leakSfxRef.StopSound();
-            Debug.Log((leakSfxRef));
+            if (!steamPlaying)
+            {
+                leakSfxRef = Audio.PlaySoundAtTransformWithRef(steamAudioClip.name, transform);
+                steamPlaying = true;
+                leakSfxTimeToReplay = Time.fixedTime + steamAudioClip.length;
+            }
+            else
+            {
+                if (Time.fixedTime > leakSfxTimeToReplay)
+                {
+                    steamPlaying = false;
+                }
+            }
             CurrentPressure += PressureToDeplete * Time.deltaTime;
         }
         if (CurrentPressure >= 100)

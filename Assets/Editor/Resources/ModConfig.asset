@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Pressure
   title: Pressure
-  author: ElijahZAwesome
+  author: ElijahZAwesome, Pruz
   description: 'The pressure''s building... But can you keep calm?
 
 
@@ -21,6 +21,6 @@ MonoBehaviour:
 
 
     Ensure that the Pressure Service is active or this won''t work.'
-  version: 1.0
+  version: 2.0
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 4f43f29d247bf0a4798eec6f287f68a3, type: 3}

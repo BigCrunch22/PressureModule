@@ -70,7 +70,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4911425990013624}
-  - component: {fileID: 95432952419101406}
   - component: {fileID: 114890862539793794}
   - component: {fileID: 114173473661845632}
   - component: {fileID: 114489430341312888}
@@ -758,23 +757,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205386401306902}
   m_Mesh: {fileID: 4300000, guid: 41b715611ce8b5546a1ecc2d8259c0a9, type: 3}
---- !u!95 &95432952419101406
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098029594435694}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 41b715611ce8b5546a1ecc2d8259c0a9, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!102 &102208736026190302
 TextMesh:
   serializedVersion: 3
@@ -918,12 +900,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Audio: {fileID: 114489430341312888}
-  BossManager: {fileID: 0}
+  BossManager: {fileID: 114735179380037144}
   Module: {fileID: 114173473661845632}
   Bomb: {fileID: 114994781701616346}
   Service: {fileID: 0}
   Button: {fileID: 114318004593750844}
   ButtonTop: {fileID: 1597542174801812}
+  steamAudioClip: {fileID: 8300000, guid: 59a3377887ba2ce44b72ae8042b7ca31, type: 3}
+  warningAudioClip: {fileID: 8300000, guid: 27f2eac772202324cb1709962c96c3b1, type: 3}
   PressureMeterText: {fileID: 102208736026190302}
   ButtonPushedOffset: {x: 0, y: -0.01, z: 0}
   ButtonDetectSinglePressTime: 0.15
