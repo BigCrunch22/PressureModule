@@ -38,6 +38,7 @@ public class PressureModule : MonoBehaviour
 
     private bool isActivated = false;
     private bool ZenModeActive;
+    [SerializeField]
     private bool steamPlaying = false;
     private bool buttonPressed = false;
     private float buttonSinglePressTimer = 0;
@@ -93,7 +94,10 @@ public class PressureModule : MonoBehaviour
     {
         isActivated = true;
 
-        gameObject.AddComponent<KMAudio>().PlaySoundAtTransform(warningAudioClip.name, transform.parent);
+        if (thisIsBossModule)
+        {
+            //Audio.PlaySoundAtTransform(warningAudioClip.name, transform.parent);
+        }
 
         if(ZenModeActive)
         {
@@ -123,7 +127,7 @@ public class PressureModule : MonoBehaviour
 
     private bool ButtonPress()
     {
-        leakSfxRef.StopSound();
+        if(leakSfxRef != null) leakSfxRef.StopSound();
         steamPlaying = false;
         Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, transform);
         Button.GetComponent<KMSelectable>().AddInteractionPunch();
@@ -242,19 +246,24 @@ public class PressureModule : MonoBehaviour
 
         if (!buttonPressed)
         {
-            if (!steamPlaying)
+            if (thisIsBossModule)
             {
-                leakSfxRef = Audio.PlaySoundAtTransformWithRef(steamAudioClip.name, transform);
-                steamPlaying = true;
-                leakSfxTimeToReplay = Time.fixedTime + steamAudioClip.length;
-            }
-            else
-            {
-                if (Time.fixedTime > leakSfxTimeToReplay)
+                if (!steamPlaying)
                 {
-                    steamPlaying = false;
+                    //leakSfxRef = Audio.PlaySoundAtTransformWithRef(steamAudioClip.name, transform);
+                    steamPlaying = true;
+                    leakSfxTimeToReplay = Time.fixedTime + steamAudioClip.length;
+                }
+                else
+                {
+                    if (Time.fixedTime >= leakSfxTimeToReplay)
+                    {
+                        //leakSfxRef.StopSound();
+                        steamPlaying = false;
+                    }
                 }
             }
+
             CurrentPressure += PressureToDeplete * Time.deltaTime;
         }
         if (CurrentPressure >= 100)

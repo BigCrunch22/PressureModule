@@ -917,6 +917,7 @@ MonoBehaviour:
   PressureDepletionDivider: 3
   PressureToDeplete: 0.2
   MeterGlitching: 0
+  steamPlaying: 0
 --- !u!114 &114735179380037144
 MonoBehaviour:
   m_ObjectHideFlags: 1
